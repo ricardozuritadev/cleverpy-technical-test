@@ -5,8 +5,20 @@
   justify-content: center;
   height: 100vh;
 
+  &__shadow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(tab-port) {
+      background-color: $color-white;
+      box-shadow: $shadow-auth;
+      border-radius: 25px;
+      padding: 4rem 7rem;
+    }
+  }
+
   &__pic {
-    background-color: white;
     border-radius: 50%;
     width: 15rem;
     padding: 3rem;

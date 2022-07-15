@@ -22,29 +22,35 @@ const Login: React.FC = () => {
 
   return (
     <section className="auth">
-      <div className="auth__pic">
-        <img className="auth__img" src={images.avatar} alt="" />
+      <div className="auth__shadow">
+        <div className="auth__pic">
+          <img className="auth__img" src={images.avatar} alt="" />
+        </div>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="auth__form">
+          <Input
+            type="email"
+            placeholder="email"
+            fn={() => register('email')}
+          />
+          <Input
+            type="password"
+            placeholder="password"
+            fn={() => register('password')}
+          />
+          <input type="submit" ref={submitRef} style={{ display: 'none' }} />
+        </form>
+
+        <section className="auth__buttons">
+          <Button text="Login" handleClick={handleButton} />
+          <p className="auth__text">
+            Don't have an account?{' '}
+            <span onClick={handleClick} className="auth__signup">
+              Signup here
+            </span>
+          </p>
+        </section>
       </div>
-
-      <form onSubmit={handleSubmit(onSubmit)} className="auth__form">
-        <Input type="email" placeholder="email" fn={() => register('email')} />
-        <Input
-          type="password"
-          placeholder="password"
-          fn={() => register('password')}
-        />
-        <input type="submit" ref={submitRef} style={{ display: 'none' }} />
-      </form>
-
-      <section className="auth__buttons">
-        <Button text="Login" handleClick={handleButton} />
-        <p className="auth__text">
-          Don't have an account?{' '}
-          <span onClick={handleClick} className="auth__signup">
-            Signup here
-          </span>
-        </p>
-      </section>
 
       <Waves />
     </section>
