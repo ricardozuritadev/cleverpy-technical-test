@@ -2,4 +2,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
+
+  @include respond(tab-landscape) {
+    bottom: -18rem;
+  }
 }
