@@ -1,1 +1,1 @@
-export * from './ButtonProps';
+export * from './ButtonAttributes';
