@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  background-color: $color-blue-light;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  transition: all 0.1s;
+  cursor: pointer;
+
+  &__text {
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-blue;
+  }
+}

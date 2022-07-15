@@ -1,9 +1,9 @@
-import { ButtonProps } from './types';
+import { ButtonAttributes } from './types';
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
+const Button: React.FC<ButtonAttributes> = ({ text, handleClick }) => {
   return (
-    <section>
-      <p>{text}</p>
+    <section onClick={handleClick} className="button">
+      <p className="button__text">{text}</p>
     </section>
   );
 };
