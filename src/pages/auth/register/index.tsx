@@ -1,25 +1,22 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import images from '../../../utils/imgLoader';
 
 import Input from '../../../components/input';
 import Button from '../../../components/button';
 import Waves from '../../../components/waves';
 
-type UserData = {
-  email: string;
-  password: string;
-};
-
 const Register: React.FC = () => {
-  const submitRef = useRef<any>(null);
+  const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
 
   const handleClick = () => navigate('/login');
-  const handleButton = () => submitRef.current.click();
-  const onSubmit = (data: any) => {
+  const handleButton = () => {
+    if (submitRef.current != null) submitRef.current.click();
+  };
+  const onSubmit = (data: FieldValues) => {
     console.info('> user data: ', data);
   };
 
