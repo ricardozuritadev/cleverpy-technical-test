@@ -1,0 +1,37 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__pic {
+    background-color: white;
+    border-radius: 50%;
+    width: 15rem;
+    padding: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  &__form {
+    margin-bottom: 1.5rem;
+  }
+
+  &__buttons {
+    text-align: center;
+  }
+
+  &__text {
+    color: $color-gray-dark;
+    margin-top: 2rem;
+  }
+
+  &__signup {
+    color: $color-blue-light;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+}
