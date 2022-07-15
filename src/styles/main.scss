@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700;900&display=swap');
+
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './base/base';
+@import './base/typography';
+@import './base/animations';
+@import './base/utils';
+
+@import '../components/button/styles.scss';
+@import '../components/input/styles.scss';
+@import '../components/navbar/styles.scss';
+@import '../components/title/styles.scss';
+@import '../components/post-card/styles.scss';
+@import '../components/user-card/styles.scss';
+@import '../components/waves/styles.scss';
+
+@import '../pages/auth/styles.scss';
+@import '../pages/dashboard/styles.scss';
