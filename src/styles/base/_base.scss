@@ -5,13 +5,23 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px
 }
 
 body {
   background-color: $color-gray;
+
+  @include respond(tab-port) {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 img {
   max-width: 100%;
+}
+
+::placeholder {
+  color: #a7a7a7;
+  font-size: $default-font-size;
 }
