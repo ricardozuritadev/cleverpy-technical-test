@@ -25,3 +25,11 @@ img {
   color: #a7a7a7;
   font-size: $default-font-size;
 }
+
+.dashboard__container {
+  margin: 2rem;
+
+  @include respond(desktop) {
+    margin: 5rem;
+  }
+}
