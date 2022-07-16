@@ -1,30 +1,19 @@
+import AsideMenu from '../../components/aside-menu';
+import Header from '../../components/header/indext';
 import PostCard from '../../components/post-card';
 import UserCard from '../../components/user-card';
+import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
     <section className="dashboard">
-      <nav className="dashboard__nav"></nav>
+      {/* <section className="aside__menu">
+        <AsideMenu />
+      </section> */}
 
-      <section className="dashboard__section">
-        <h2 className="dashboard__title">
-          Select a user to manage their posts
-        </h2>
-        <section className="dashboard__data">
-          <section className="dashboard__container">
-            <h3 className="dashboard__subtitle">Users</h3>
-            <div className="dashboard__cards">
-              <UserCard />
-            </div>
-          </section>
-          <section className="dashboard__container">
-            <h3 className="dashboard__subtitle">Posts</h3>
-            <div className="dashboard__cards">
-              <PostCard />
-            </div>
-          </section>
-        </section>
-      </section>
+      <Header />
+
+      <Outlet />
     </section>
   );
 };
