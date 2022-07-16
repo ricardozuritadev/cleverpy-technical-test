@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-white;
+  padding: 3rem;
+  box-shadow: $shadow-auth;
+
+  @include respond(desktop) {
+    padding: 3rem 5rem;
+  }
+
+  &__desktop {
+    display: none;
+
+    @include respond(desktop) {
+      display: block;
+    }
+  }
+
+  &__mobile {
+    @include respond(desktop) {
+      display: none;
+    }
+  }
+
+  &__icons {
+    font-size: 2rem;
+  }
+}
