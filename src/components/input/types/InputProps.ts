@@ -4,4 +4,5 @@ export type InputProps = {
   fn: any;
   type: HTMLInputTypeAttribute;
   placeholder: string;
+  required?: boolean;
 };
