@@ -31,11 +31,13 @@ const Login: React.FC = () => {
           <Input
             type="email"
             placeholder="email"
+            required
             fn={() => register('email')}
           />
           <Input
             type="password"
             placeholder="password"
+            required
             fn={() => register('password')}
           />
           <input type="submit" ref={submitRef} style={{ display: 'none' }} />
