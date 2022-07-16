@@ -1,0 +1,17 @@
+.dashboard {
+  &__main {
+    width: 100%;
+  }
+
+  @include respond(desktop) {
+    display: flex;
+  }
+
+  &__aside {
+    display: none;
+
+    @include respond(desktop) {
+      display: block;
+    }
+  }
+}

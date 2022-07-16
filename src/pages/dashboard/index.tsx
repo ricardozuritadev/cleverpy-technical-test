@@ -6,13 +6,13 @@ import Header from '../../components/header/indext';
 const Dashboard = () => {
   return (
     <section className="dashboard">
-      {/* <section className="aside__menu">
+      <section className="dashboard__aside">
         <AsideMenu />
-      </section> */}
-
-      <Header />
-
-      <Outlet />
+      </section>
+      <section className="dashboard__main">
+        <Header />
+        <Outlet />
+      </section>
     </section>
   );
 };
