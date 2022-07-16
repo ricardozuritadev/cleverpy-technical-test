@@ -11,7 +11,7 @@ html {
 body {
   background-color: $color-gray;
 
-  @include respond(tab-port) {
+  @include respond(tablet) {
     height: 100vh;
     overflow: hidden;
   }

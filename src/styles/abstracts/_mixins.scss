@@ -1,27 +1,15 @@
 // MEDIA QUERY MANAGER
-/* $breakpoint arguement choices:
-- tab-port
-- tab-land
-- big-desktop
-*/
 @mixin respond($breakpoint) {
-  @if $breakpoint == tab-port {
+  @if $breakpoint == tablet {
+    // 600px
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
     // 900px
     @media only screen and (min-width: 56.25em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tab-landscape {
-    // 1200px
-    @media only screen and (min-width: 75em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == big-desktop {
-    // 1800px
-    @media only screen and (min-width: 112.5em) {
       @content;
     }
   }
