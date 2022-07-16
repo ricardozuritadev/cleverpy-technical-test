@@ -1,5 +1,5 @@
 const AsideMenu = () => {
-  return <div>AsideMenu</div>;
+  return <aside className="aside">AsideMenu</aside>;
 };
 
 export default AsideMenu;
