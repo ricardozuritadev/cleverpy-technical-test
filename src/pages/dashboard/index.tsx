@@ -1,8 +1,7 @@
+import { Outlet } from 'react-router-dom';
+
 import AsideMenu from '../../components/aside-menu';
 import Header from '../../components/header/indext';
-import PostCard from '../../components/post-card';
-import UserCard from '../../components/user-card';
-import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
