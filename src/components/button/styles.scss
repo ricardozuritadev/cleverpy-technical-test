@@ -2,9 +2,10 @@
   display: inline-block;
   background-color: $color-blue-light;
   border-radius: 5px;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   text-transform: uppercase;
   transition: all 0.1s;
+  width: 100%;
   cursor: pointer;
 
   &__text {
