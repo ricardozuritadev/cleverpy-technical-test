@@ -6,8 +6,11 @@ export const catchAsync =
     try {
       const result = await fn(...args);
       return result.data;
-    } catch (error: any) {
-      console.info('> catchAsync: ', error.message);
+    } catch (error) {
+      let message;
+      if (error instanceof Error) message = error.message;
+      else message = String(error);
+      console.info('> catchAsync: ', message);
       return false;
     }
   };
