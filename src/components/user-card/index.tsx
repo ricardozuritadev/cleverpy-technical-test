@@ -1,12 +1,25 @@
 import images from '../../utils/imgLoader';
+import { useNavigate, useParams } from 'react-router-dom';
+import { UserTypes } from './types';
 
-const UserCard = () => {
+const UserCard: React.FC<UserTypes> = ({ name, id }) => {
+  const { idUser } = useParams();
+  const navigate = useNavigate();
+
+  const handleClick = () => navigate(`/dashboard/manage/${id}`);
+
   return (
-    <section className="user">
+    <section
+      className="user"
+      onClick={handleClick}
+      style={{
+        backgroundColor: Number(idUser) === id ? '#dff2ff' : 'transparent',
+      }}
+    >
       <section>
         <img src={images.avatar} alt="user-pic" className="user__img" />
       </section>
-      <h3>User 1</h3>
+      <p>{name}</p>
     </section>
   );
 };
