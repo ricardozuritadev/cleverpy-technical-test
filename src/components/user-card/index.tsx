@@ -2,9 +2,9 @@ import images from '../../utils/imgLoader';
 
 const UserCard = () => {
   return (
-    <section className="user card">
+    <section className="user">
       <section>
-        <img src={images.avatar} alt="user-pic" />
+        <img src={images.avatar} alt="user-pic" className="user__img" />
       </section>
       <h3>User 1</h3>
     </section>

@@ -1,0 +1,21 @@
+.user {
+  background-color: $color-white;
+  box-shadow: $shadow-dark;
+  border-radius: 15px;
+  margin: 1rem 0.5rem 2rem;
+  padding: 2rem 4rem;
+
+  @include respond(desktop) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 25rem;
+  }
+
+  &__img {
+    @include respond(desktop) {
+      width: 3rem;
+    }
+  }
+}
