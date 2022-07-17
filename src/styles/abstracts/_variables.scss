@@ -2,15 +2,14 @@
 $default-font-size: 1.6rem;
 
 // SHADOWS
-$shadow-auth: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-$shadow-card: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-  rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
+$shadow-auth: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+$shadow-dark: rgba(60, 64, 67, 0.227) 0px 1px 2px 0px,
+  rgba(60, 64, 67, 0.129) 0px 2px 6px 2px;
 // COLORS
 $color-white: #fff;
-$color-gray: #f1f3f5ff;
+$color-gray: #e5eaee;
 $color-gray-light: #f5f5f5ff;
-$color-gray-dark: #191919ff;
+$color-gray-dark: #27282a;
 $color-blue: #2855a6ff;
 $color-blue-light: #309be4ff;
 $color-green: #65b12bff;
