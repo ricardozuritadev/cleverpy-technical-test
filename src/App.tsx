@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { useGetter } from './context';
 
 const App = () => {
-  const { setPosts } = useGetter();
+  const { setUsers, setPosts } = useGetter();
 
   useEffect(() => {
+    setUsers();
     setPosts();
   }, []);
 
