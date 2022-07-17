@@ -10,10 +10,40 @@ html {
 
 body {
   background-color: $color-gray;
+  color: $color-gray-dark;
+  height: 100vh;
+
+  // SCROLLBAR STYLES
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(192, 192, 192);
+    border-radius: 50px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(126, 126, 126);
+  }
 
   @include respond(tablet) {
-    height: 100vh;
     overflow: hidden;
+
+    // SCROLLBAR STYLES
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
   }
 }
 
@@ -30,6 +60,6 @@ img {
   margin: 2rem;
 
   @include respond(desktop) {
-    margin: 5rem;
+    margin: 2rem 5rem;
   }
 }
