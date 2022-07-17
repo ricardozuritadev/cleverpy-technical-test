@@ -21,6 +21,7 @@ body {
 
 .heading__secondary {
   font-size: 1.9rem;
+  margin-bottom: 2rem;
 
   @include respond(tablet) {
     font-size: 2.4rem;
