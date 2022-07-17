@@ -1,3 +1,3 @@
-# cleverpy-technical-test
+# posts-management-dashboard
 
 Posts management dashboard
