@@ -2,6 +2,16 @@
   text-align: center;
   position: relative;
 
+  &__empty {
+    @include respond(desktop) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 80rem;
+    }
+  }
+
   &__section {
     @include respond(desktop) {
       display: flex;
@@ -27,7 +37,7 @@
       box-shadow: $shadow-auth;
       padding: 3rem 4rem;
       margin-top: 1.5rem;
-      height: 48%;
+      height: 53rem;
       overflow-y: scroll;
       overflow-x: hidden;
     }
