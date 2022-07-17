@@ -6,8 +6,13 @@ const getPosts = (client: AxiosInstance) => async () => {
   return catchAsync(client.get)('/posts');
 };
 
+const getUsers = (client: AxiosInstance) => async () => {
+  return catchAsync(client.get)('users');
+};
+
 const sampleData = (client: AxiosInstance) => ({
   getPosts: getPosts(client),
+  getUsers: getUsers(client),
 });
 
 export default sampleData;
