@@ -7,27 +7,34 @@ const Manage = () => {
       <h2 className="heading__secondary">
         Select a user to manage their posts
       </h2>
-      <section>
-        <h3>Users</h3>
-        <section className="manage__users">
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
+      <section className="manage__section">
+        <section>
+          <h3>Users</h3>
+          <section className="manage__cards">
+            <UserCard />
+            <UserCard />
+            <UserCard />
+            <UserCard />
+            <UserCard />
+            <UserCard />
+            <UserCard />
+            <UserCard />
+          </section>
         </section>
-      </section>
-      <section>
-        <h3>Posts</h3>
-        <section className="manage__posts">
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
+
+        <section>
+          <h3>Posts</h3>
+          <section className="manage__cards manage__cards--posts">
+            <PostCard />
+            <PostCard />
+            <PostCard />
+            <PostCard />
+            <PostCard />
+            <PostCard />
+            <PostCard />
+            <PostCard />
+            <PostCard />
+          </section>
         </section>
       </section>
     </section>

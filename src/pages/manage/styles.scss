@@ -1,7 +1,35 @@
 .manage {
   text-align: center;
+  position: relative;
 
-  &__users {
+  &__section {
+    @include respond(desktop) {
+      display: flex;
+      gap: 5rem;
+    }
+  }
+
+  &__cards {
     display: flex;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+
+    &--posts {
+      display: block;
+      height: 45rem;
+      overflow-y: auto;
+    }
+
+    @include respond(desktop) {
+      display: block;
+      background-color: $color-white;
+      border-radius: 15px;
+      box-shadow: $shadow-auth;
+      padding: 3rem 4rem;
+      margin-top: 1.5rem;
+      height: 48%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
   }
 }
