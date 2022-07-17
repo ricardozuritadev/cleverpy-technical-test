@@ -11,3 +11,14 @@ export const usePosts = () => {
 
   return [posts, getPosts];
 };
+
+export const useUsers = () => {
+  const [users, setUsers] = useState([]);
+
+  const getUsers = async () => {
+    const result = await services.sampleData.getUsers();
+    result && setUsers(result);
+  };
+
+  return [users, getUsers];
+};
