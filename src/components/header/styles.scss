@@ -1,11 +1,14 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: $color-white;
+  background-color: $color-blue;
+  color: $color-white;
   padding: 3rem 2rem;
   box-shadow: $shadow-auth;
 
   @include respond(desktop) {
+    background-color: $color-white;
+    color: $color-gray-dark;
     padding: 3rem 5rem;
   }
 
