@@ -12,11 +12,13 @@ const Manage = () => {
     ({ userId }: any) => userId === Number(idUser)
   );
 
+  const filteredUser = users.find(({ id }: any) => id === Number(idUser));
+
   return (
     <section className="manage dashboard__container">
       <section className="manage__section">
         <section>
-          <h3>Users</h3>
+          <h3 className="manage__title">Users</h3>
           <section className="manage__cards">
             {users.map((user: any) => (
               <UserCard key={user.id} {...user} />
@@ -25,11 +27,11 @@ const Manage = () => {
         </section>
 
         <section>
-          <h3>Posts</h3>
+          <h3 className="manage__title">Posts</h3>
           <section className="manage__cards manage__cards--posts">
             {idUser ? (
               filteredPosts.map((post: any) => (
-                <PostCard key={post.id} {...post} />
+                <PostCard key={post.id} {...post} user={filteredUser} />
               ))
             ) : (
               <h2 className="heading__secondary manage__empty">
