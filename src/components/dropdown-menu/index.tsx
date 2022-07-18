@@ -11,7 +11,8 @@ const MySwal = withReactContent(Swal);
 const DropdownMenu: React.FC<DropdownProps> = ({
   postId,
   handleDelete,
-  setEditedText,
+  setEditedTitle,
+  setEditedBody,
 }) => {
   const [isHide, setIsHide] = useState<boolean>(true);
 
@@ -20,18 +21,32 @@ const DropdownMenu: React.FC<DropdownProps> = ({
   const handleEdit = async () => {
     handleShowHide();
     return MySwal.fire({
-      title: 'Enter new post text',
-      input: 'textarea',
+      title: 'Enter new post title',
+      input: 'text',
       showCancelButton: true,
       confirmButtonText: 'Save',
       confirmButtonColor: '#65b12bff',
       cancelButtonText: 'Cancel',
       cancelButtonColor: '#e60023ff',
       width: '50rem',
-    }).then(postText => {
-      if (postText.value) {
-        setEditedText(postText.value);
-      }
+    }).then(async postTitle => {
+      return MySwal.fire({
+        title: 'Enter new post content',
+        input: 'textarea',
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        confirmButtonColor: '#65b12bff',
+        cancelButtonText: 'Cancel',
+        cancelButtonColor: '#e60023ff',
+        width: '50rem',
+      }).then(postBody => {
+        if (postTitle.value) {
+          setEditedTitle(postTitle.value);
+        }
+        if (postBody.value) {
+          setEditedBody(postBody.value);
+        }
+      });
     });
   };
 
