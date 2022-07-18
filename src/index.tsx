@@ -13,7 +13,6 @@ import Dashboard from './pages/dashboard';
 import Manage from './pages/manage';
 import Users from './pages/all-users';
 import Posts from './pages/all-posts';
-import UserPosts from './pages/_user-posts';
 
 const Container = () => {
   const [users, setUsers] = useUsers();
@@ -26,7 +25,7 @@ const Container = () => {
           <Route path="/" element={<App />}>
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="manage" element={<Manage />}>
-                <Route path=":idUser" element={<UserPosts />} />
+                <Route path=":idUser" element={<Manage />} />
               </Route>
               <Route path="users" element={<Users />} />
               <Route path="posts" element={<Posts />} />
