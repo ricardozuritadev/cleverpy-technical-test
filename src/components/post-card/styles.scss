@@ -2,16 +2,25 @@
   background-color: $color-white;
   box-shadow: $shadow-dark;
   border-radius: 15px;
-  margin: 1rem 0;
-  padding: 1.2rem 2rem;
-
-  @include respond(desktop) {
-    margin-bottom: 2rem;
-  }
+  margin: 2rem 0;
+  padding: 2rem;
 
   &__header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &__author {
+    @include respond(desktop) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 0.3rem;
   }
 
   &__text {
