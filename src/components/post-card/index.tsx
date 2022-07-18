@@ -10,7 +10,8 @@ const PostCard: React.FC<PostTypes> = ({
   user,
   handleDelete,
 }) => {
-  const [editedText, setEditedText] = useState<string>('');
+  const [editedBody, setEditedBody] = useState<string | undefined>(undefined);
+  const [editedTitle, setEditedTitle] = useState<string | undefined>(undefined);
 
   return (
     <section className="post">
@@ -20,12 +21,17 @@ const PostCard: React.FC<PostTypes> = ({
         <DropdownMenu
           handleDelete={handleDelete}
           postId={id}
-          setEditedText={setEditedText}
+          setEditedBody={setEditedBody}
+          setEditedTitle={setEditedTitle}
         />
       </div>
       <div className="post_content">
-        <h4 className="post__title">{title}</h4>
-        <p className="post__text">{editedText === '' ? body : editedText}</p>
+        <h4 className="post__title">
+          {editedTitle === undefined ? title : editedTitle}
+        </h4>
+        <p className="post__text">
+          {editedBody === undefined ? body : editedBody}
+        </p>
       </div>
     </section>
   );
