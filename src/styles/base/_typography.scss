@@ -1,6 +1,10 @@
 body {
   font-family: 'Outfit', sans-serif;
-  font-size: $default-font-size;
+  font-size: $mobile-font-size;
+
+  @include respond(desktop) {
+    font-size: $desktop-font-size;
+  }
 }
 
 .title {
@@ -36,7 +40,7 @@ body {
 }
 
 .paragraph {
-  font-size: $default-font-size;
+  font-size: $mobile-font-size;
 
   @include respond(desktop) {
     font-size: 4.2rem;

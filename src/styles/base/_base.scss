@@ -53,13 +53,17 @@ img {
 
 ::placeholder {
   color: #a7a7a7;
-  font-size: $default-font-size;
+  font-size: $mobile-font-size;
+
+  @include respond(desktop) {
+    font-size: $desktop-font-size;
+  }
 }
 
 .dashboard__container {
   margin: 2rem;
 
   @include respond(desktop) {
-    margin: 5rem;
+    margin: 3rem 5rem;
   }
 }
