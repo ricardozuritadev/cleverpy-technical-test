@@ -1,0 +1,44 @@
+.dropdown {
+  position: relative;
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    padding: 0 0.5rem;
+    cursor: pointer;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: $color-white;
+    border: 1px solid $color-gray;
+    box-shadow: $shadow-menu;
+    border-radius: 5px 0 5px 5px;
+    padding: 2.5rem 4rem;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+  }
+
+  &__text {
+    font-size: $mobile-font-size;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include respond(desktop) {
+      font-size: $desktop-font-size;
+    }
+
+    &--green {
+      color: $color-blue-light;
+    }
+
+    &--red {
+      color: $color-red;
+    }
+  }
+}
