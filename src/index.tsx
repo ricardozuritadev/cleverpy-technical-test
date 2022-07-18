@@ -12,7 +12,6 @@ import Register from './pages/auth/register';
 import Dashboard from './pages/dashboard';
 import Manage from './pages/manage';
 import Users from './pages/all-users';
-import Posts from './pages/all-posts';
 
 const Container = () => {
   const [users, setUsers] = useUsers();
@@ -28,7 +27,6 @@ const Container = () => {
                 <Route path=":idUser" element={<Manage />} />
               </Route>
               <Route path="users" element={<Users />} />
-              <Route path="posts" element={<Posts />} />
             </Route>
           </Route>
 
