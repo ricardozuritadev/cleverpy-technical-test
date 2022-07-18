@@ -1,13 +1,20 @@
 import { PostTypes } from './types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import DropdownMenu from '../dropdown-menu';
 
-const PostCard: React.FC<PostTypes> = ({ title, body, user }) => {
+const PostCard: React.FC<PostTypes> = ({
+  id,
+  title,
+  body,
+  user,
+  setPostId,
+  handleDelete,
+}) => {
   return (
     <section className="post">
       <div className="post__header">
         <p className="post__author">{user.name}</p>
-        <FontAwesomeIcon icon={faEllipsis} />
+        <p>{id}</p>
+        <DropdownMenu handleDelete={handleDelete} postId={id} />
       </div>
       <div className="post_content">
         <h4 className="post__title">{title}</h4>
