@@ -7,6 +7,15 @@ body {
   }
 }
 
+.swal2-popup {
+  font-family: 'Outfit', sans-serif;
+  font-size: $mobile-font-size !important;
+
+  @include respond(desktop) {
+    font-size: $desktop-font-size !important;
+  }
+}
+
 .title {
   font-size: 3.7rem;
 
