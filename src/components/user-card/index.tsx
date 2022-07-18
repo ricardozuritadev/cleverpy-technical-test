@@ -13,7 +13,8 @@ const UserCard: React.FC<UserTypes> = ({ name, id }) => {
       className="user"
       onClick={handleClick}
       style={{
-        backgroundColor: Number(idUser) === id ? '#dff2ff' : 'transparent',
+        backgroundColor: Number(idUser) === id ? '#dff2ff' : 'white',
+        fontWeight: Number(idUser) === id ? 'bold' : '',
       }}
     >
       <section>
