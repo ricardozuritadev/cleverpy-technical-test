@@ -1,5 +1,6 @@
 export type DropdownProps = {
   postId: number;
-  setEditedText: any;
+  setEditedBody: any;
+  setEditedTitle: any;
   handleDelete: (postId: number) => void;
 };
