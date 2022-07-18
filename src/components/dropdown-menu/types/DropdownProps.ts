@@ -1,4 +1,4 @@
 export type DropdownProps = {
   postId: number;
-  handleDelete: any;
+  handleDelete: (postId: number) => void;
 };

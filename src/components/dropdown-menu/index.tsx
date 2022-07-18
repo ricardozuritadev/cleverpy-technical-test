@@ -4,7 +4,7 @@ import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 const DropdownMenu: React.FC<DropdownProps> = ({ postId, handleDelete }) => {
-  const [isHide, setIsHide] = useState(true);
+  const [isHide, setIsHide] = useState<boolean>(true);
 
   const handleClick = () => setIsHide(!isHide);
 

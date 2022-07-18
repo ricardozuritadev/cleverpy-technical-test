@@ -6,6 +6,5 @@ export type PostTypes = {
     id: number;
     name: string;
   };
-  setPostId: () => void;
-  handleDelete: any;
+  handleDelete: (postId: number) => void;
 };

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useGetter } from '../../context';
 import { useParams } from 'react-router-dom';
+import { UserTypes, PostTypes } from './types';
 
 import PostCard from '../../components/post-card';
 import UserCard from '../../components/user-card';
@@ -8,19 +9,19 @@ import UserCard from '../../components/user-card';
 const Manage = () => {
   const { users, posts } = useGetter();
   const { idUser } = useParams();
-  const [userPosts, setUserPosts] = useState<any>([]);
+  const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
 
-  const filteredUser = users.find(({ id }: any) => id === Number(idUser));
+  const filteredUser = users.find(({ id }: UserTypes) => id === Number(idUser));
 
   useEffect(() => {
     const filteredPosts = posts.filter(
-      ({ userId }: any) => userId === Number(idUser)
+      ({ userId }: PostTypes) => userId === Number(idUser)
     );
     setUserPosts(filteredPosts);
   }, [idUser]);
 
   const handleDelete = (postId: number) => {
-    const result = userPosts.filter(({ id }: any) => id !== postId);
+    const result = userPosts.filter(({ id }: PostTypes) => id !== postId);
     setUserPosts(result);
   };
 
@@ -30,7 +31,7 @@ const Manage = () => {
         <section>
           <h3 className="manage__title">Users</h3>
           <section className="manage__cards">
-            {users.map((user: any) => (
+            {users.map((user: UserTypes) => (
               <UserCard key={user.id} {...user} />
             ))}
           </section>
@@ -40,9 +41,9 @@ const Manage = () => {
           <h3 className="manage__title">Posts</h3>
 
           <section className="manage__cards manage__cards--posts">
-            {idUser ? (
+            {idUser !== undefined ? (
               userPosts.length > 0 ? (
-                userPosts.map((post: any) => (
+                userPosts.map((post: PostTypes) => (
                   <PostCard
                     key={post.id}
                     {...post}
@@ -52,7 +53,7 @@ const Manage = () => {
                 ))
               ) : (
                 <h2 className="heading__secondary manage__empty">
-                  {filteredUser.name} has no posts
+                  {filteredUser?.name} has no posts
                 </h2>
               )
             ) : (

@@ -6,7 +6,6 @@ const PostCard: React.FC<PostTypes> = ({
   title,
   body,
   user,
-  setPostId,
   handleDelete,
 }) => {
   return (
