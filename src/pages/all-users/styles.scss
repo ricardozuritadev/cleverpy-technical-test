@@ -1,0 +1,16 @@
+.users {
+  &__title {
+    margin: 3rem 0;
+  }
+
+  &__grid {
+    display: grid;
+
+    @include respond(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      overflow-y: scroll;
+      height: 55rem;
+      margin: 0 5rem;
+    }
+  }
+}
