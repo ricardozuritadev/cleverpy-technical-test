@@ -1,8 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
 import images from '../../utils/imgLoader';
 
@@ -26,7 +25,7 @@ const AsideMenu = () => {
             background: isActive ? '#1c4998' : '#2855a6ff',
           })}
         >
-          <FontAwesomeIcon icon={faCommentDots} className="aside__icons" />
+          <FontAwesomeIcon icon={faComments} className="aside__icons" />
           <p className="aside__text">Manage posts</p>
         </NavLink>
         <NavLink
@@ -38,16 +37,6 @@ const AsideMenu = () => {
         >
           <FontAwesomeIcon icon={faUsers} className="aside__icons" />
           <p className="aside__text">Users</p>
-        </NavLink>
-        <NavLink
-          to="/dashboard/posts"
-          className="aside__links"
-          style={({ isActive }) => ({
-            background: isActive ? '#1c4998' : '#2855a6ff',
-          })}
-        >
-          <FontAwesomeIcon icon={faComments} className="aside__icons" />
-          <p className="aside__text">Posts</p>
         </NavLink>
       </nav>
     </aside>
