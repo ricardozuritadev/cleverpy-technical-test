@@ -6,6 +6,11 @@
   padding: 2rem 1rem;
   cursor: pointer;
   min-width: 15rem;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   &__img {
     width: 5rem;
