@@ -12,6 +12,7 @@ import Register from './pages/auth/register';
 import Dashboard from './pages/dashboard';
 import Manage from './pages/manage';
 import Users from './pages/all-users';
+import NotFound from './pages/not-found';
 
 const Container = () => {
   const [users, setUsers] = useUsers();
@@ -35,6 +36,7 @@ const Container = () => {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>
