@@ -1,6 +1,7 @@
 .dashboard {
   &__main {
     width: 100%;
+    animation: fadeIn 0.1s;
   }
 
   @include respond(desktop) {

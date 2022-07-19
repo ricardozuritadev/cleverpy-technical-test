@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeInDown 0.8s ease-out;
 
     @include respond(desktop) {
       background-color: $color-white;
