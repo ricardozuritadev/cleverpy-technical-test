@@ -3,18 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { useGetter } from '../../context';
-
 import images from '../../utils/imgLoader';
 
 const AsideMenu = () => {
-  const { admin, search, setSearch } = useGetter();
+  const { admin, setSearch } = useGetter();
   const navigate = useNavigate();
 
   const handleClick = () => setSearch('');
 
   const handleProfile = () => navigate('/dashboard/profile');
-
-  console.log(search);
 
   return (
     <aside className="aside">
