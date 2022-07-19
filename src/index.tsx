@@ -2,9 +2,9 @@ import './styles/main.scss';
 
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Context from './context';
+import Context, { useGetter } from './context';
 import { useUsers, usePosts } from './hooks';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import App from './App';
 import Login from './pages/auth/login';
@@ -14,18 +14,33 @@ import Manage from './pages/manage';
 import Users from './pages/all-users';
 import NotFound from './pages/not-found';
 
+const Guard = ({ component: Component }: any) => {
+  const { admin } = useGetter();
+  return admin ? Component : <Navigate to="/login" replace />;
+};
+
 const Container = () => {
   const [users, setUsers] = useUsers();
   const [posts, setPosts] = usePosts();
+  const [admin, setAdmin] = useState(null);
   const [search, setSearch] = useState<string>('');
 
   return (
     <Context.Provider
-      value={{ users, setUsers, posts, setPosts, search, setSearch }}
+      value={{
+        admin,
+        setAdmin,
+        users,
+        setUsers,
+        posts,
+        setPosts,
+        search,
+        setSearch,
+      }}
     >
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />}>
+          <Route path="/" element={<Guard component={<App />} />}>
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="manage" element={<Manage />}>
                 <Route path=":idUser" element={<Manage />} />
