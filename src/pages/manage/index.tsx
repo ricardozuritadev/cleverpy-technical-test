@@ -37,7 +37,7 @@ const Manage = () => {
     <section className="manage dashboard__container">
       <section className="manage__section">
         <section>
-          <h3 className="manage__title">Users</h3>
+          <h3 className="heading__tertiary manage__title">Users</h3>
           <section className="manage__cards">
             {filteredUser.length > 0 ? (
               filteredUser.map((user: UserTypes) => (
@@ -52,8 +52,7 @@ const Manage = () => {
         </section>
 
         <section>
-          <h3 className="manage__title">Posts</h3>
-
+          <h3 className="heading__tertiary manage__title">Posts</h3>
           <section className="manage__cards manage__cards--posts">
             {idUser !== undefined ? (
               userPosts.length > 0 ? (
