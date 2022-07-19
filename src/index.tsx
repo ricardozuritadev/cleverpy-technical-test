@@ -1,5 +1,4 @@
 import './styles/main.scss';
-
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Context, { useGetter } from './context';
@@ -9,6 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import App from './App';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
+import AdminProfile from './pages/admin-profile';
 import Dashboard from './pages/dashboard';
 import Manage from './pages/manage';
 import Users from './pages/all-users';
@@ -46,6 +46,7 @@ const Container = () => {
                 <Route path=":idUser" element={<Manage />} />
               </Route>
               <Route path="users" element={<Users />} />
+              <Route path="profile" element={<AdminProfile />} />
             </Route>
           </Route>
 
