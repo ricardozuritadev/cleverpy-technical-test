@@ -11,8 +11,6 @@ const Manage = () => {
   const { idUser } = useParams();
   const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
 
-  console.log(posts);
-
   const filteredUser = users.find(({ id }: UserTypes) => id === Number(idUser));
 
   useEffect(() => {
