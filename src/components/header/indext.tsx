@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useGetter } from '../../context';
 
 const Header = () => {
-  const { setSearch } = useGetter();
+  const { search, setSearch } = useGetter();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -17,6 +17,7 @@ const Header = () => {
         <input
           type="text"
           onChange={handleChange}
+          value={search}
           placeholder="Search user"
           className="header__input"
         />
