@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import services from '../services';
 
+// Custom hook para setear los posts en el estado posts
 export const usePosts = () => {
   const [posts, setPosts] = useState([]);
 
@@ -12,6 +13,7 @@ export const usePosts = () => {
   return [posts, getPosts];
 };
 
+// Custom hook para setear los usuarios en el estado users
 export const useUsers = () => {
   const [users, setUsers] = useState([]);
 

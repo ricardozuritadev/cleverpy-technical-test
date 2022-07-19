@@ -9,7 +9,7 @@ import Button from '../../../components/button';
 import Waves from '../../../components/waves';
 
 const Login: React.FC = () => {
-  const { setAdmin } = useGetter();
+  const { setAdmin } = useGetter(); // Utilizo la función setAdmin del contexto para setear el admin
   const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();

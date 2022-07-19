@@ -12,10 +12,12 @@ const MySwal = withReactContent(Swal);
 const Header = () => {
   const { search, setSearch, setAdmin } = useGetter();
 
+  // Función para manejar el cambio del estado search
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
+  // Función para eliminar al usuario del contexto y cerrar sesión
   const logout = () => {
     return MySwal.fire({
       title: 'Do you want to leave?',

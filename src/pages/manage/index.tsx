@@ -11,6 +11,7 @@ const Manage = () => {
   const { idUser } = useParams();
   const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
 
+  // Filtro los usuarios cuando se utiliza el buscador
   const filteredUser = users.filter((user: UserTypes) => {
     if (search === '') {
       return user;
@@ -19,8 +20,10 @@ const Manage = () => {
     }
   });
 
+  // Guardo el autor del post para pasárselo como props al post card
   const postAuthor = users.find(({ id }: UserTypes) => id === Number(idUser));
 
+  // Carga los posts filtrados dependiendo del usuario elegido
   useEffect(() => {
     const filteredPosts = posts.filter(
       ({ userId }: PostTypes) => userId === Number(idUser)
@@ -28,6 +31,7 @@ const Manage = () => {
     setUserPosts(filteredPosts);
   }, [idUser]);
 
+  // Función para eliminar posts de un usuario
   const handleDelete = (postId: number) => {
     const result = userPosts.filter(({ id }: PostTypes) => id !== postId);
     setUserPosts(result);

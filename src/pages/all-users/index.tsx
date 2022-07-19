@@ -4,8 +4,10 @@ import { useGetter } from '../../context';
 import UserInfo from '../../components/user-info';
 
 const Users = () => {
+  // Me traigo los usuarios y el texto de búsqueda del contexto
   const { users, search } = useGetter();
 
+  // Filtro los usuarios cuando se usa el buscador
   const filteredUsers = users.filter((user: UserTypes) => {
     if (search === '') {
       return user;

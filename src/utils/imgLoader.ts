@@ -1,9 +1,8 @@
 import avatar from '../assets/images/avatar.png';
-import logo from '../assets/images/logo-prov.png';
 
+// Función para importar imágenes donde las necesite
 const images = {
   avatar,
-  logo,
 };
 
 export default images;

@@ -2,6 +2,7 @@ import { useGetter } from '../../context';
 import images from '../../utils/imgLoader';
 
 const AdminProfile = () => {
+  // Me traigo el admin del contexto con el hook useGetter()
   const { admin } = useGetter();
 
   return (

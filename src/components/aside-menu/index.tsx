@@ -9,8 +9,10 @@ const AsideMenu = () => {
   const { admin, setSearch } = useGetter();
   const navigate = useNavigate();
 
+  // Función para limpiar el buscador cuando se cambia de página
   const handleClick = () => setSearch('');
 
+  // Función para redirigir al usuario a la página de su perfil
   const handleProfile = () => navigate('/dashboard/profile');
 
   return (

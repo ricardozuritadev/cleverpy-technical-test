@@ -30,6 +30,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({
     };
   }, [wrapperRef]);
 
+  // Función para editar el titulo y el texto de los posts que muestra un popup
   const handleEdit = async () => {
     handleShowHide();
     return MySwal.fire({
@@ -62,6 +63,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({
     });
   };
 
+  // Función para eliminar un post que muestra un popup para confirmar
   const handleDeletePost = async () => {
     handleShowHide();
     return MySwal.fire({

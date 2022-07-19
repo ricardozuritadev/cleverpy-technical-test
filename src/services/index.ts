@@ -6,10 +6,8 @@ const JSONplaceholderApi: AxiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com',
 });
 
-// const authApi: AxiosInstance = axios.create({
-//   baseURL: 'https://localhost:5000',
-//   withCredentials: true,
-// });
+// Aquí se pueden crear más instancias para llamar a diferentes APIs
+// por ejemplo la API de autenticación de usuarios
 
 const services = {
   sampleData: sampleData(JSONplaceholderApi),

@@ -14,6 +14,8 @@ import Manage from './pages/manage';
 import Users from './pages/all-users';
 import NotFound from './pages/not-found';
 
+// Guarda para ptoteger las rutas que están dentro de '/'
+// para que sólo puedan entrar los usuarios logeados
 const Guard = ({ component: Component }: any) => {
   const { admin } = useGetter();
   return admin ? Component : <Navigate to="/login" replace />;
