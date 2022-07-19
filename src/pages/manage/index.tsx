@@ -11,7 +11,7 @@ const Manage = () => {
   const { idUser } = useParams();
   const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
 
-  const filteredUser = users.filter((user: any) => {
+  const filteredUser = users.filter((user: UserTypes) => {
     if (search === '') {
       return user;
     } else {
