@@ -4,10 +4,27 @@ import { ContextTypes } from './types';
 const Context: any = createContext<ContextTypes | null>(null);
 
 export const useGetter = () => {
-  const { users, setUsers, posts, setPosts, search, setSearch } =
-    useContext(Context);
+  const {
+    users,
+    setUsers,
+    posts,
+    setPosts,
+    search,
+    setSearch,
+    admin,
+    setAdmin,
+  } = useContext(Context);
 
-  return { users, setUsers, posts, setPosts, search, setSearch };
+  return {
+    users,
+    setUsers,
+    posts,
+    setPosts,
+    search,
+    setSearch,
+    admin,
+    setAdmin,
+  };
 };
 
 export default Context;
