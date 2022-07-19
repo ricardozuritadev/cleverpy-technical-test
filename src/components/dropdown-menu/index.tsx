@@ -1,6 +1,5 @@
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-
 import { DropdownProps } from './types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
