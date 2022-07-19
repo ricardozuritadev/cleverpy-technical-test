@@ -1,15 +1,15 @@
 .info {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   background-color: $color-white;
   box-shadow: $shadow-dark;
   border-radius: 15px;
   margin: 1rem 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem;
 
   &__img {
-    width: 8rem;
+    width: 5rem;
   }
 
   &__name {
@@ -23,6 +23,7 @@
   }
 
   &__phone {
+    font-size: 1.4rem;
     color: $color-green;
   }
 }
