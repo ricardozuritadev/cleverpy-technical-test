@@ -7,11 +7,19 @@ import PostCard from '../../components/post-card';
 import UserCard from '../../components/user-card';
 
 const Manage = () => {
-  const { users, posts } = useGetter();
+  const { users, posts, search } = useGetter();
   const { idUser } = useParams();
   const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
 
-  const filteredUser = users.find(({ id }: UserTypes) => id === Number(idUser));
+  const filteredUser = users.filter((user: any) => {
+    if (search === '') {
+      return user;
+    } else {
+      return user.name.toLowerCase().includes(search);
+    }
+  });
+
+  const postAuthor = users.find(({ id }: UserTypes) => id === Number(idUser));
 
   useEffect(() => {
     const filteredPosts = posts.filter(
@@ -31,9 +39,15 @@ const Manage = () => {
         <section>
           <h3 className="manage__title">Users</h3>
           <section className="manage__cards">
-            {users.map((user: UserTypes) => (
-              <UserCard key={user.id} {...user} />
-            ))}
+            {filteredUser.length > 0 ? (
+              filteredUser.map((user: UserTypes) => (
+                <UserCard key={user.id} {...user} />
+              ))
+            ) : (
+              <h2 className="heading__secondary manage__empty manage__empty--user">
+                No user found
+              </h2>
+            )}
           </section>
         </section>
 
@@ -47,13 +61,13 @@ const Manage = () => {
                   <PostCard
                     key={post.id}
                     {...post}
-                    user={filteredUser}
+                    user={postAuthor}
                     handleDelete={handleDelete}
                   />
                 ))
               ) : (
                 <h2 className="heading__secondary manage__empty">
-                  {filteredUser?.name} has no posts
+                  {postAuthor?.name} has no posts
                 </h2>
               )
             ) : (
