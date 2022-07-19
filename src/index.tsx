@@ -11,6 +11,7 @@ import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import Dashboard from './pages/dashboard';
 import Manage from './pages/manage';
+import Posts from './pages/posts';
 import Users from './pages/all-users';
 
 const Container = () => {
@@ -24,7 +25,7 @@ const Container = () => {
           <Route path="/" element={<App />}>
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="manage" element={<Manage />}>
-                <Route path=":idUser" element={<Manage />} />
+                <Route path=":idUser" element={<Posts />} />
               </Route>
               <Route path="users" element={<Users />} />
             </Route>
