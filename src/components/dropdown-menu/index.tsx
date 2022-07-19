@@ -3,7 +3,7 @@ import withReactContent from 'sweetalert2-react-content';
 import { DropdownProps } from './types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const MySwal = withReactContent(Swal);
 
@@ -14,8 +14,21 @@ const DropdownMenu: React.FC<DropdownProps> = ({
   setEditedBody,
 }) => {
   const [isHide, setIsHide] = useState<boolean>(true);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleShowHide = () => setIsHide(!isHide);
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setIsHide(true);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [wrapperRef]);
 
   const handleEdit = async () => {
     handleShowHide();
@@ -72,7 +85,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({
         <FontAwesomeIcon icon={faEllipsis} className="dropdown__dots" />
       </button>
       {!isHide && (
-        <section className="dropdown__options">
+        <section ref={wrapperRef} className="dropdown__options">
           <button
             onClick={handleEdit}
             className="dropdown__text dropdown__text--green"
