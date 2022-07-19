@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, FieldValues } from 'react-hook-form';
+import { useGetter } from '../../../context';
 import images from '../../../utils/imgLoader';
 
 import Input from '../../../components/input';
@@ -8,6 +9,7 @@ import Button from '../../../components/button';
 import Waves from '../../../components/waves';
 
 const Login: React.FC = () => {
+  const { admin, setAdmin } = useGetter();
   const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -17,8 +19,11 @@ const Login: React.FC = () => {
     if (submitRef.current != null) submitRef.current.click();
   };
   const onSubmit = (data: FieldValues) => {
-    console.info('> user data: ', data);
+    setAdmin(data);
+    navigate('/dashboard/manage');
   };
+
+  console.log(admin);
 
   return (
     <section className="auth">
@@ -35,6 +40,12 @@ const Login: React.FC = () => {
             fn={() => register('email')}
           />
           <Input
+            type="text"
+            placeholder="username"
+            required
+            fn={() => register('username')}
+          />
+          <Input
             type="password"
             placeholder="password"
             required
@@ -45,12 +56,12 @@ const Login: React.FC = () => {
 
         <section className="auth__buttons">
           <Button text="Login" handleClick={handleButton} />
-          <p className="auth__text">
+          {/* <p className="auth__text">
             Don't have an account?{' '}
             <span onClick={handleClick} className="auth__signup">
               Signup here
             </span>
-          </p>
+          </p> */}
         </section>
       </div>
 
