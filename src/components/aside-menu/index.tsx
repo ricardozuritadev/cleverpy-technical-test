@@ -2,10 +2,19 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { useGetter } from '../../context';
 
 import images from '../../utils/imgLoader';
 
 const AsideMenu = () => {
+  const { search, setSearch } = useGetter();
+
+  const handleClick = () => {
+    setSearch('');
+  };
+
+  console.log(search);
+
   return (
     <aside className="aside">
       <section className="aside__profile">
@@ -21,6 +30,7 @@ const AsideMenu = () => {
         <NavLink
           to="/dashboard/manage"
           className="aside__links"
+          onClick={handleClick}
           style={({ isActive }) => ({
             background: isActive ? '#1c4998' : '#2855a6ff',
           })}
@@ -31,6 +41,7 @@ const AsideMenu = () => {
         <NavLink
           to="/dashboard/users"
           className="aside__links"
+          onClick={handleClick}
           style={({ isActive }) => ({
             background: isActive ? '#1c4998' : '#2855a6ff',
           })}
