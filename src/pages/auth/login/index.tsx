@@ -9,7 +9,7 @@ import Button from '../../../components/button';
 import Waves from '../../../components/waves';
 
 const Login: React.FC = () => {
-  const { admin, setAdmin } = useGetter();
+  const { setAdmin } = useGetter();
   const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -22,8 +22,6 @@ const Login: React.FC = () => {
     setAdmin(data);
     navigate('/dashboard/manage');
   };
-
-  console.log(admin);
 
   return (
     <section className="auth">
