@@ -39,6 +39,21 @@
 
     &__admin {
       color: $color-blue-light;
+      margin-bottom: 1rem;
+    }
+
+    &__adminprofile {
+      color: $color-white;
+      background-color: transparent;
+      border: 1px solid $color-blue-light;
+      border-radius: 50px;
+      padding: 0.5rem 2rem;
+      transition: all 0.1s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-green;
+      }
     }
 
     &__nav {

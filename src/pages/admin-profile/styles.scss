@@ -1,0 +1,41 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  animation: fadeIn 0.08s;
+
+  &__card {
+    text-align: center;
+    background-color: $color-white;
+    box-shadow: $shadow-auth;
+    border-radius: 25px;
+    padding: 6rem 4rem;
+    width: 90%;
+
+    @include respond(desktop) {
+      width: 35%;
+    }
+  }
+
+  &__img {
+    width: 15rem;
+    margin-bottom: 3rem;
+  }
+
+  &__username {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__email {
+    color: $color-green;
+    margin-bottom: 1rem;
+  }
+
+  &__role {
+    color: $color-blue-light;
+  }
+}
