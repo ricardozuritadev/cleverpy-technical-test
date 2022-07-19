@@ -18,9 +18,13 @@ const Users = () => {
     <section className="users">
       <h2 className="users__title">Users</h2>
       <section className="users__grid">
-        {filteredUsers.map((user: UserTypes) => (
-          <UserInfo key={user.id} {...user} />
-        ))}
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map((user: UserTypes) => (
+            <UserInfo key={user.id} {...user} />
+          ))
+        ) : (
+          <h2>No user found</h2>
+        )}
       </section>
     </section>
   );
