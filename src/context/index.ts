@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import { ContextTypes } from './types';
 
-const Context: any = createContext<ContextTypes | null>(null);
+const Context: any = createContext(null);
 
 export const useGetter = () => {
   const {
