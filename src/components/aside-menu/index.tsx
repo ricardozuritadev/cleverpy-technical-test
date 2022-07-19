@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
@@ -8,10 +8,11 @@ import images from '../../utils/imgLoader';
 
 const AsideMenu = () => {
   const { admin, search, setSearch } = useGetter();
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-    setSearch('');
-  };
+  const handleClick = () => setSearch('');
+
+  const handleProfile = () => navigate('/dashboard/profile');
 
   console.log(search);
 
@@ -24,6 +25,9 @@ const AsideMenu = () => {
         <p className="aside__welcome">Welcome</p>
         <p className="aside__username">{admin.username}</p>
         <p className="aside__admin">Site admin</p>
+        <button onClick={handleProfile} className="aside__adminprofile">
+          My profile
+        </button>
       </section>
 
       <nav className="aside__nav">
