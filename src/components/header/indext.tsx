@@ -3,8 +3,9 @@ import withReactContent from 'sweetalert2-react-content';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useGetter } from '../../context';
+
+import BurguerMenu from '../burguer-menu';
 
 const MySwal = withReactContent(Swal);
 
@@ -52,7 +53,7 @@ const Header = () => {
       </div>
 
       <div className="header__mobile">
-        <FontAwesomeIcon icon={faBars} className="header__icons" />
+        <BurguerMenu />
       </div>
     </header>
   );
