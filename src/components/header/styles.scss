@@ -12,11 +12,28 @@
     padding: 3rem 5rem;
   }
 
+  &__searchbar {
+    position: relative;
+    width: 15rem;
+
+    @include respond(desktop) {
+      width: 20rem;
+    }
+  }
+
+  &__input {
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    padding: 8px 15px 6px 35px;
+    width: 100%;
+  }
+
   &__desktop {
     display: none;
 
     @include respond(desktop) {
       display: block;
+      cursor: pointer;
     }
   }
 
@@ -28,5 +45,15 @@
 
   &__icons {
     font-size: 2rem;
+
+    &--search {
+      color: $color-gray-dark;
+      font-size: 1.8rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      padding: 0 1rem;
+    }
   }
 }
