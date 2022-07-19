@@ -9,7 +9,11 @@
   }
 
   &__dots {
-    font-size: 1.5rem;
+    font-size: 2rem;
+
+    @include respond(desktop) {
+      font-size: 1.5rem;
+    }
   }
 
   &__options {
@@ -24,6 +28,7 @@
     position: absolute;
     top: 2rem;
     right: 0;
+    animation: slideDown 0.1s;
   }
 
   &__text {
@@ -32,6 +37,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    animation: rotateX 0.2s;
 
     @include respond(desktop) {
       font-size: $desktop-font-size;
