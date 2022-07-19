@@ -17,7 +17,6 @@ const PostCard: React.FC<PostTypes> = ({
     <section className="post">
       <div className="post__header">
         <p className="post__author">{user.name}</p>
-        <p>{id}</p>
         <DropdownMenu
           handleDelete={handleDelete}
           postId={id}
