@@ -1,6 +1,6 @@
 import './styles/main.scss';
 
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Context from './context';
 import { useUsers, usePosts } from './hooks';
@@ -16,9 +16,12 @@ import Users from './pages/all-users';
 const Container = () => {
   const [users, setUsers] = useUsers();
   const [posts, setPosts] = usePosts();
+  const [search, setSearch] = useState<string>('');
 
   return (
-    <Context.Provider value={{ users, setUsers, posts, setPosts }}>
+    <Context.Provider
+      value={{ users, setUsers, posts, setPosts, search, setSearch }}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
