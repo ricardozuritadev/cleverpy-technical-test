@@ -7,7 +7,7 @@ import { useGetter } from '../../context';
 import images from '../../utils/imgLoader';
 
 const AsideMenu = () => {
-  const { search, setSearch } = useGetter();
+  const { admin, search, setSearch } = useGetter();
 
   const handleClick = () => {
     setSearch('');
@@ -22,7 +22,7 @@ const AsideMenu = () => {
           <img className="aside__img" src={images.avatar} alt="user-avatar" />
         </div>
         <p className="aside__welcome">Welcome</p>
-        <p className="aside__username">RickyZu</p>
+        <p className="aside__username">{admin.username}</p>
         <p className="aside__admin">Site admin</p>
       </section>
 
