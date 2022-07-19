@@ -26,10 +26,6 @@ const Header = () => {
     }).then(result => {
       if (result.isConfirmed) {
         setAdmin(null);
-        return MySwal.fire({
-          text: 'Good bye!',
-          confirmButtonColor: '#65b12bff',
-        });
       }
     });
   };
