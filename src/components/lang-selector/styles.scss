@@ -1,0 +1,25 @@
+.language {
+  display: flex;
+
+  &__flag {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.fib {
+  background-color: #aa151b;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin-left: 1rem;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.1s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
