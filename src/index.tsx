@@ -1,4 +1,6 @@
 import './styles/main.scss';
+import 'flag-icons';
+import './utils/translator';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Context, { useGetter } from './context';
