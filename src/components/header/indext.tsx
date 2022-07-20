@@ -12,14 +12,9 @@ import BurguerMenu from '../burguer-menu';
 const MySwal = withReactContent(Swal);
 
 const Header = () => {
-  const { search, setSearch, setAdmin } = useGetter();
+  const { setAdmin } = useGetter();
 
   const { t } = useTranslation();
-
-  // Función para manejar el cambio del estado search
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
-  };
 
   // Función para eliminar al usuario del contexto y cerrar sesión
   const logout = () => {
@@ -40,7 +35,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <SearchBar search={search} handleChange={handleChange} />
+      <SearchBar />
 
       <div className="header__desktop header__desktop--flex">
         <div className="header__desktop" onClick={logout}>

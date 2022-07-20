@@ -1,10 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { SearchbarProps } from './types';
+import { useGetter } from '../../context';
 
-const SearchBar: React.FC<SearchbarProps> = ({ search, handleChange }) => {
+const SearchBar = () => {
+  const { search, setSearch } = useGetter();
+
   const { t } = useTranslation();
+
+  // Función para manejar el cambio del estado search
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  };
 
   return (
     <div className="searchbar">
