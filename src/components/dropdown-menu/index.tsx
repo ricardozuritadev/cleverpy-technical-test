@@ -4,6 +4,7 @@ import { DropdownProps } from './types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const MySwal = withReactContent(Swal);
 
@@ -15,6 +16,8 @@ const DropdownMenu: React.FC<DropdownProps> = ({
 }) => {
   const [isHide, setIsHide] = useState<boolean>(true);
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const { t } = useTranslation();
 
   const handleShowHide = () => setIsHide(!isHide);
 
@@ -34,22 +37,22 @@ const DropdownMenu: React.FC<DropdownProps> = ({
   const handleEdit = async () => {
     handleShowHide();
     return MySwal.fire({
-      title: 'Enter new post title',
+      title: t('modify_post_title'),
       input: 'text',
       showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: t('save'),
       confirmButtonColor: '#65b12bff',
-      cancelButtonText: 'Cancel',
+      cancelButtonText: t('cancel'),
       cancelButtonColor: '#e60023ff',
       width: '50rem',
     }).then(async postTitle => {
       return MySwal.fire({
-        title: 'Enter new post content',
+        title: t('modify_post_content'),
         input: 'textarea',
         showCancelButton: true,
-        confirmButtonText: 'Save',
+        confirmButtonText: t('save'),
         confirmButtonColor: '#65b12bff',
-        cancelButtonText: 'Cancel',
+        cancelButtonText: t('cancel'),
         cancelButtonColor: '#e60023ff',
         width: '50rem',
       }).then(postBody => {
@@ -67,13 +70,13 @@ const DropdownMenu: React.FC<DropdownProps> = ({
   const handleDeletePost = async () => {
     handleShowHide();
     return MySwal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: t('confirm'),
+      text: t('warning'),
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#65b12bff',
       cancelButtonColor: '#e60023ff',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: t('confirm_delete'),
     }).then(result => {
       if (result.isConfirmed) {
         handleDelete(postId);
@@ -92,13 +95,13 @@ const DropdownMenu: React.FC<DropdownProps> = ({
             onClick={handleEdit}
             className="dropdown__text dropdown__text--green"
           >
-            Edit
+            {t('edit')}
           </button>
           <button
             onClick={handleDeletePost}
             className="dropdown__text dropdown__text--red"
           >
-            Delete
+            {t('delete')}
           </button>
         </section>
       )}
