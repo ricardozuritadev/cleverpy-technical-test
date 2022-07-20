@@ -22,7 +22,7 @@
 
 ## Descripción del proyecto
 Proyecto frontend que consiste en un dashboard para la administración de posts realizados por usuarios. Esta plataforma permite a un administrador visualizar, editar o eliminar los posts de los usuarios. Los datos son consumidos de la API gratuita http://jsonplaceholder.typicode.com/
-Tiene también un sistema de autenticación y autorización de usuarios administradores. Actualmente no está conectado a ningún servidor backend pero se implementará en la siguiente versión.
+Tiene también un sistema de autenticación y autorización de usuarios administradores. Actualmente no está conectado a ningún servidor backend pero se implementará en la siguiente versión, aunque cabe destacar que el código ha sido desarrollado teniendo en cuenta esto y será sencillo hacer la conexión con otros servicios.
 
 ## Instalación
 El proyecto ha sido desplegado en Vercel y se puede acceder en la siguiente URL:
@@ -46,7 +46,7 @@ npm i
 
 - `Pantalla de login`: Se puede ingresar con cualquier dato ya que aún no está conectado al backend de auth.
 - `Selector de idioma`: Se puede elegir el idioma en el que se muestra la webapp. Por el momento hay disponibles inglés y español pero se puede ampliar a los idiomas que sean necesarios.
-- `Viusalización de posts`: El administrador puede visualizar el título y el contenido de los posts creados por un usuario en la pestaña "Manage posts"
+- `Viusalización de posts`: El administrador puede visualizar el título y el contenido de los posts creados por un usuario en la pestaña de administración.
 - `Eliminar posts`: El administrador puede elminiar los posts de un usuario en concreto (esta modificación no es persistente, es sólo a nivel de cliente).
 - `Editar posts`: El administrador puede editar el título y el contenido de los posts (esta modificación no es persistente, es sólo a nivel de cliente).
 - `Visualización de usuarios`: El administrador puede ver todos los usuarios que han posteado, y puede filtrarlos utilizando la barra de búsqueda del menú.
