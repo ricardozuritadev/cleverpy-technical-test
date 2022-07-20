@@ -5,6 +5,17 @@
   justify-content: center;
   height: 100vh;
 
+  &__lang {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+
+    @include respond(tablet) {
+      top: 5rem;
+      right: 10rem;
+    }
+  }
+
   &__shadow {
     display: flex;
     flex-direction: column;
