@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, FieldValues } from 'react-hook-form';
@@ -7,8 +8,10 @@ import images from '../../../utils/imgLoader';
 import Input from '../../../components/input';
 import Button from '../../../components/button';
 import Waves from '../../../components/waves';
+import LangSelector from '../../../components/lang-selector';
 
 const Login: React.FC = () => {
+  const { t } = useTranslation(); // Utilidad para traducir textos
   const { setAdmin } = useGetter(); // Utilizo la función setAdmin del contexto para setear el admin
   const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -25,6 +28,10 @@ const Login: React.FC = () => {
 
   return (
     <section className="auth">
+      <div className="auth__lang">
+        <LangSelector />
+      </div>
+
       <div className="auth__shadow">
         <div className="auth__pic">
           <img className="auth__img" src={images.avatar} alt="" />
@@ -39,13 +46,13 @@ const Login: React.FC = () => {
           />
           <Input
             type="text"
-            placeholder="username"
+            placeholder={t('username')}
             required
             fn={() => register('username')}
           />
           <Input
             type="password"
-            placeholder="password"
+            placeholder={t('password')}
             required
             fn={() => register('password')}
           />
@@ -53,11 +60,11 @@ const Login: React.FC = () => {
         </form>
 
         <section className="auth__buttons">
-          <Button text="Login" handleClick={handleButton} />
+          <Button text={t('login')} handleClick={handleButton} />
           {/* <p className="auth__text">
-            Don't have an account?{' '}
+            {t('no_account')}{' '}
             <span onClick={handleClick} className="auth__signup">
-              Signup here
+              {t('register')}
             </span>
           </p> */}
         </section>

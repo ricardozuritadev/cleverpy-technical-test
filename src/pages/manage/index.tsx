@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGetter } from '../../context';
 import { useParams } from 'react-router-dom';
 import { UserTypes, PostTypes } from './types';
@@ -10,6 +11,8 @@ const Manage = () => {
   const { users, posts, search } = useGetter();
   const { idUser } = useParams();
   const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
+
+  const { t } = useTranslation();
 
   // Filtro los usuarios cuando se utiliza el buscador
   const filteredUser = users.filter((user: UserTypes) => {
@@ -41,7 +44,7 @@ const Manage = () => {
     <section className="manage dashboard__container">
       <section className="manage__section">
         <section>
-          <h3 className="heading__tertiary manage__title">Users</h3>
+          <h3 className="heading__tertiary manage__title">{t('users')}</h3>
           <section className="manage__cards">
             {filteredUser.length > 0 ? (
               filteredUser.map((user: UserTypes) => (
@@ -49,14 +52,14 @@ const Manage = () => {
               ))
             ) : (
               <h2 className="heading__secondary manage__empty manage__empty--user">
-                No user found
+                {t('no_user')}
               </h2>
             )}
           </section>
         </section>
 
         <section>
-          <h3 className="heading__tertiary manage__title">Posts</h3>
+          <h3 className="heading__tertiary manage__title">{t('posts')}</h3>
           <section className="manage__cards manage__cards--posts">
             {idUser !== undefined ? (
               userPosts.length > 0 ? (
@@ -70,12 +73,12 @@ const Manage = () => {
                 ))
               ) : (
                 <h2 className="heading__secondary manage__empty">
-                  {postAuthor?.name} has no posts
+                  {t('no_posts', { post_author: postAuthor.name })}
                 </h2>
               )
             ) : (
               <h2 className="heading__secondary manage__empty">
-                Select a user to manage their posts
+                {t('select_user')}
               </h2>
             )}
           </section>

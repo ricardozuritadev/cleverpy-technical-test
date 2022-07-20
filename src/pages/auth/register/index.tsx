@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FieldValues, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import images from '../../../utils/imgLoader';
 
 import Input from '../../../components/input';
@@ -11,6 +12,8 @@ const Register: React.FC = () => {
   const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
+
+  const { t } = useTranslation();
 
   const handleClick = () => navigate('/login');
   const handleButton = () => {
@@ -36,13 +39,13 @@ const Register: React.FC = () => {
           />
           <Input
             type="username"
-            placeholder="username"
+            placeholder={t('username')}
             required
             fn={() => register('username')}
           />
           <Input
             type="password"
-            placeholder="password"
+            placeholder={t('password')}
             required
             fn={() => register('password')}
           />
@@ -52,9 +55,9 @@ const Register: React.FC = () => {
         <section className="auth__buttons">
           <Button text="Signup" handleClick={handleButton} />
           <p className="auth__text">
-            Already have an account?{' '}
+            {t('have_account')}{' '}
             <span onClick={handleClick} className="auth__signup">
-              Login here
+              {t('login')}
             </span>
           </p>
         </section>
