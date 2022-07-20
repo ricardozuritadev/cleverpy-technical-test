@@ -35,13 +35,17 @@ npm i
 ~~~
 
 ## Características del proyecto y demostración
-![1](https://user-images.githubusercontent.com/84975927/179815179-0132b8a8-bb5c-4f0d-bcf0-5de8da359fda.gif)
-![2](https://user-images.githubusercontent.com/84975927/179815631-08115973-a2de-409f-9edc-2b8710facc55.gif)
-![3](https://user-images.githubusercontent.com/84975927/179816027-1ef4efaf-e247-43d0-a91f-2462ca2cb4ad.gif)
+![p1](https://user-images.githubusercontent.com/84975927/179972353-4a8a06a3-8839-4eef-a438-7758617b29e5.gif)
+
+![p2](https://user-images.githubusercontent.com/84975927/179972369-005c9be0-a07b-42f6-b1f3-984df22aad42.gif)
+
+![p4](https://user-images.githubusercontent.com/84975927/179972393-bfbfa169-2648-456a-b836-b55e86d831f0.gif)
+
 
 ## :hammer:Funcionalidades del proyecto
 
 - `Pantalla de login`: Se puede ingresar con cualquier dato ya que aún no está conectado al backend de auth.
+- `Selector de idioma`: Se puede elegir el idioma en el que se muestra la webapp. Por el momento hay disponibles inglés y español pero se puede ampliar a los idiomas que sean necesarios.
 - `Viusalización de posts`: El administrador puede visualizar el título y el contenido de los posts creados por un usuario en la pestaña "Manage posts"
 - `Eliminar posts`: El administrador puede elminiar los posts de un usuario en concreto (esta modificación no es persistente, es sólo a nivel de cliente).
 - `Editar posts`: El administrador puede editar el título y el contenido de los posts (esta modificación no es persistente, es sólo a nivel de cliente).
@@ -62,6 +66,8 @@ npm i
 * React router dom V6
 
 * React hook form
+
+* i18next React
 
 * FontAwesome
 
