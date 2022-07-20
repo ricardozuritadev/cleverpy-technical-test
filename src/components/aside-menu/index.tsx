@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +9,8 @@ import images from '../../utils/imgLoader';
 const AsideMenu = () => {
   const { admin, setSearch } = useGetter();
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   // Función para limpiar el buscador cuando se cambia de página
   const handleClick = () => setSearch('');
@@ -21,11 +24,11 @@ const AsideMenu = () => {
         <div className="aside__avatar">
           <img className="aside__img" src={images.avatar} alt="user-avatar" />
         </div>
-        <p className="aside__welcome">Welcome</p>
+        <p className="aside__welcome">{t('welcome')}</p>
         <p className="aside__username">{admin.username}</p>
-        <p className="aside__admin">Site admin</p>
+        <p className="aside__admin">{t('role')}</p>
         <button onClick={handleProfile} className="aside__adminprofile">
-          My profile
+          {t('profile')}
         </button>
       </section>
 
@@ -39,7 +42,7 @@ const AsideMenu = () => {
           })}
         >
           <FontAwesomeIcon icon={faComments} className="aside__icons" />
-          <p className="aside__text">Manage posts</p>
+          <p className="aside__text">{t('manage')}</p>
         </NavLink>
         <NavLink
           to="/dashboard/users"
@@ -50,7 +53,7 @@ const AsideMenu = () => {
           })}
         >
           <FontAwesomeIcon icon={faUsers} className="aside__icons" />
-          <p className="aside__text">Users</p>
+          <p className="aside__text">{t('users')}</p>
         </NavLink>
       </nav>
     </aside>
