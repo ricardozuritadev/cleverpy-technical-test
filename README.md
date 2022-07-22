@@ -44,8 +44,8 @@ npm i
 
 ## :hammer:Funcionalidades del proyecto
 
-- `Pantalla de login`: Se puede ingresar con cualquier dato ya que aún no está conectado al backend de auth.
-- `Selector de idioma`: Se puede elegir el idioma en el que se muestra la webapp. Por el momento hay disponibles inglés y español pero se puede ampliar a los idiomas que sean necesarios.
+- `Pantalla de login`: El usuario administrador puede iniciar sesión o registrar una cuenta nueva de administrador. Actualmente se puede ingresar con cualquier dato ya que aún no está conectado al backend de auth.
+- `Selector de idioma`: Se puede elegir el idioma en el que se muestra la interfaz. Por el momento hay disponibles inglés y español pero se puede ampliar a los idiomas que sean necesarios.
 - `Viusalización de posts`: El administrador puede visualizar el título y el contenido de los posts creados por un usuario en la pestaña de administración.
 - `Eliminar posts`: El administrador puede elminiar los posts de un usuario en concreto (esta modificación no es persistente, es sólo a nivel de cliente).
 - `Editar posts`: El administrador puede editar el título y el contenido de los posts (esta modificación no es persistente, es sólo a nivel de cliente).
