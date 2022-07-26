@@ -3,10 +3,9 @@ import 'flag-icons';
 import './utils/translator';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Context, { useGetter } from './context';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { useUsers, usePosts } from './hooks';
+import { useAppSelector } from './store/hooks';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import App from './App';
@@ -21,29 +20,12 @@ import NotFound from './pages/not-found';
 // Guarda para ptoteger las rutas que están dentro de '/'
 // para que sólo puedan entrar los usuarios logeados
 const Guard = ({ component: Component }: any) => {
-  const { admin } = useGetter();
+  const admin = useAppSelector(state => state.admin);
   return admin ? Component : <Navigate to="/login" replace />;
 };
 
 const Container = () => {
-  const [users, setUsers] = useUsers();
-  const [posts, setPosts] = usePosts();
-  const [admin, setAdmin] = useState(null);
-  const [search, setSearch] = useState<string>('');
-
   return (
-    //  <Context.Provider
-    //   value={{
-    //     admin,
-    //     setAdmin,
-    //     users,
-    //     setUsers,
-    //     posts,
-    //     setPosts,
-    //     search,
-    //     setSearch,
-    //   }}
-    // >
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
@@ -63,7 +45,6 @@ const Container = () => {
         </Routes>
       </BrowserRouter>
     </Provider>
-    // </Context.Provider>
   );
 };
 
