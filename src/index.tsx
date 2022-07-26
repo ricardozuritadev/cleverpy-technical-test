@@ -21,7 +21,11 @@ import NotFound from './pages/not-found';
 // para que sólo puedan entrar los usuarios logeados
 const Guard = ({ component: Component }: any) => {
   const admin = useAppSelector(state => state.admin);
-  return admin ? Component : <Navigate to="/login" replace />;
+  return admin.email && admin.username && admin.password ? (
+    Component
+  ) : (
+    <Navigate to="/login" replace />
+  );
 };
 
 const Container = () => {
