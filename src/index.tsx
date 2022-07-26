@@ -1,7 +1,7 @@
 import './styles/main.scss';
 import 'flag-icons';
 import './utils/translator';
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store';
