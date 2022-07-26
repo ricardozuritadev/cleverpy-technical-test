@@ -4,6 +4,8 @@ import './utils/translator';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Context, { useGetter } from './context';
+import { Provider } from 'react-redux';
+import { store } from './store';
 import { useUsers, usePosts } from './hooks';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -30,18 +32,19 @@ const Container = () => {
   const [search, setSearch] = useState<string>('');
 
   return (
-    <Context.Provider
-      value={{
-        admin,
-        setAdmin,
-        users,
-        setUsers,
-        posts,
-        setPosts,
-        search,
-        setSearch,
-      }}
-    >
+    //  <Context.Provider
+    //   value={{
+    //     admin,
+    //     setAdmin,
+    //     users,
+    //     setUsers,
+    //     posts,
+    //     setPosts,
+    //     search,
+    //     setSearch,
+    //   }}
+    // >
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Guard component={<App />} />}>
@@ -59,7 +62,8 @@ const Container = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </Context.Provider>
+    </Provider>
+    // </Context.Provider>
   );
 };
 
