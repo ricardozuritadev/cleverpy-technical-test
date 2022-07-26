@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useGetter } from '../../context';
 import { useParams } from 'react-router-dom';
 import { UserTypes, PostTypes } from './types';
+import { useAppSelector } from '../../store/hooks';
 
 import PostCard from '../../components/post-card';
 import UserCard from '../../components/user-card';
 
 const Manage = () => {
-  const { users, posts, search } = useGetter();
+  const { list: posts } = useAppSelector(state => state.posts);
+  const { list: users } = useAppSelector(state => state.users);
+  const { text: search } = useAppSelector(state => state.seacrh);
+
   const { idUser } = useParams();
   const [userPosts, setUserPosts] = useState<PostTypes[]>([]);
 
@@ -23,9 +26,6 @@ const Manage = () => {
     }
   });
 
-  // Guardo el autor del post para pasárselo como props al post card
-  const postAuthor = users.find(({ id }: UserTypes) => id === Number(idUser));
-
   // Carga los posts filtrados dependiendo del usuario elegido
   useEffect(() => {
     const filteredPosts = posts.filter(
@@ -33,6 +33,11 @@ const Manage = () => {
     );
     setUserPosts(filteredPosts);
   }, [idUser]);
+
+  // Guardo el autor del post para pasárselo como props al post card
+  const postAuthor: any = users.find(
+    ({ id }: UserTypes) => id === Number(idUser)
+  );
 
   // Función para eliminar posts de un usuario
   const handleDelete = (postId: number) => {
@@ -61,6 +66,9 @@ const Manage = () => {
         <section>
           <h3 className="heading__tertiary manage__title">{t('posts')}</h3>
           <section className="manage__cards manage__cards--posts">
+            {/* {userPosts.map((post: PostTypes) => (
+              <PostCard key={post.id} {...post} handleDelete={handleDelete} />
+            ))} */}
             {idUser !== undefined ? (
               userPosts.length > 0 ? (
                 userPosts.map((post: PostTypes) => (

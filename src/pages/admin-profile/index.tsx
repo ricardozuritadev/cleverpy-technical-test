@@ -1,10 +1,10 @@
+import { useAppSelector } from '../../store/hooks';
 import { useTranslation } from 'react-i18next';
-import { useGetter } from '../../context';
 import images from '../../utils/imgLoader';
 
 const AdminProfile = () => {
-  // Me traigo el admin del contexto con el hook useGetter()
-  const { admin } = useGetter();
+  // Me traigo el admin del store
+  const { email, username } = useAppSelector(state => state.admin);
 
   const { t } = useTranslation();
 
@@ -16,8 +16,8 @@ const AdminProfile = () => {
           <img src={images.avatar} alt="user-avatar" className="admin__img" />
         </section>
         <section className="admin__profile">
-          <p className="admin__username">{admin.username}</p>
-          <p className="admin__email">{admin.email}</p>
+          <p className="admin__username">{username}</p>
+          <p className="admin__email">{email}</p>
           <p className="admin__role">{t('role')}</p>
         </section>
       </section>

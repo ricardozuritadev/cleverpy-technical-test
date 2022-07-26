@@ -1,16 +1,18 @@
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { setSearch } from '../../store/slices/search';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useGetter } from '../../context';
 
 const SearchBar = () => {
-  const { search, setSearch } = useGetter();
+  const dispatch = useAppDispatch();
+  const { text: search } = useAppSelector(state => state.seacrh);
 
   const { t } = useTranslation();
 
   // Función para manejar el cambio del estado search
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
+    dispatch(setSearch(event.target.value));
   };
 
   return (

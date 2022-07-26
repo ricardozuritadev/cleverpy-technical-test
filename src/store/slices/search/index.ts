@@ -3,12 +3,12 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 // Definición del type del slice
 interface SearchState {
-  text: string | null;
+  text: string;
 }
 
 // Estado inicial
 const initialState: SearchState = {
-  text: null,
+  text: '',
 };
 
 // Admin slice

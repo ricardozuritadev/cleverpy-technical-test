@@ -8,7 +8,7 @@ const getPosts = (client: AxiosInstance) => async () => {
 
 // Utilizo una función currificada para traerme los usuarios de la API
 const getUsers = (client: AxiosInstance) => async () => {
-  return catchAsync(client.get)('users');
+  return catchAsync(client.get)('/users');
 };
 
 // Exporto la función sampleData para ejecutarla donde la necesite

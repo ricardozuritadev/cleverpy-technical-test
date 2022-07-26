@@ -1,8 +1,9 @@
+import { useAppDispatch } from '../../../store/hooks';
+import { setAdmin } from '../../../store/slices/admin';
 import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, FieldValues } from 'react-hook-form';
-import { useGetter } from '../../../context';
 import images from '../../../utils/imgLoader';
 
 import Input from '../../../components/input';
@@ -12,7 +13,7 @@ import LangSelector from '../../../components/lang-selector';
 
 const Login: React.FC = () => {
   const { t } = useTranslation(); // Utilidad para traducir textos
-  const { setAdmin } = useGetter(); // Utilizo la función setAdmin del contexto para setear el admin
+  const dispatch = useAppDispatch();
   const submitRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -22,7 +23,7 @@ const Login: React.FC = () => {
     if (submitRef.current != null) submitRef.current.click();
   };
   const onSubmit = (data: FieldValues) => {
-    setAdmin(data);
+    dispatch(setAdmin(data));
     navigate('/dashboard/manage');
   };
 

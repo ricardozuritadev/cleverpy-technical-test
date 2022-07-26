@@ -1,12 +1,13 @@
+import { useAppSelector } from '../../store/hooks';
 import { UserTypes } from './types/UserTypes';
-import { useGetter } from '../../context';
 import { useTranslation } from 'react-i18next';
 
 import UserInfo from '../../components/user-info';
 
 const Users = () => {
-  // Me traigo los usuarios y el texto de búsqueda del contexto
-  const { users, search } = useGetter();
+  // Me traigo los usuarios y el texto de búsqueda de la store
+  const { list: users } = useAppSelector(state => state.users);
+  const { text: search } = useAppSelector(state => state.seacrh);
 
   const { t } = useTranslation();
 

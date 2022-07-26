@@ -1,13 +1,13 @@
+import { useAppSelector } from '../../store/hooks';
 import { slide as Menu } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
-import { useGetter } from '../../context';
 import images from '../../utils/imgLoader';
 import { useTranslation } from 'react-i18next';
 
 import LangSelector from '../lang-selector';
 
 const BurguerMenu = () => {
-  const { admin } = useGetter();
+  const { username } = useAppSelector(state => state.admin);
 
   const { t } = useTranslation();
 
@@ -18,7 +18,7 @@ const BurguerMenu = () => {
           <img className="aside__img" src={images.avatar} alt="user-avatar" />
         </div>
         <p className="aside__welcome">{t('welcome')}</p>
-        <p className="aside__username">{admin.username}</p>
+        <p className="aside__username">{username}</p>
         <p className="aside__admin">{t('role')}</p>
       </section>
 
