@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { postsSlice } from './slices/posts';
+import { postsSlice, usersSlice, adminSlice, searchSlice } from './slices';
 
 export const store = configureStore({
   reducer: {
     posts: postsSlice.reducer,
+    users: usersSlice.reducer,
+    admin: adminSlice.reducer,
+    seacrh: searchSlice.reducer,
   },
 });
 
