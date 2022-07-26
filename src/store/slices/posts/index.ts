@@ -14,6 +14,7 @@ const initialState: PostsState = {
   isLoading: false,
 };
 
+// Posts slice
 export const postsSlice = createSlice({
   name: 'posts',
   initialState,
@@ -28,4 +29,5 @@ export const postsSlice = createSlice({
   },
 });
 
+// Posts actions
 export const { loadingPosts, setPosts } = postsSlice.actions;
