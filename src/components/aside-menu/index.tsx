@@ -1,19 +1,21 @@
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { setSearch } from '../../store/slices/search';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import { useGetter } from '../../context';
 import images from '../../utils/imgLoader';
 
 const AsideMenu = () => {
-  const { admin, setSearch } = useGetter();
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { username } = useAppSelector(state => state.admin);
 
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   // Función para limpiar el buscador cuando se cambia de página
-  const handleClick = () => setSearch('');
+  const handleClick = () => dispatch(setSearch(''));
 
   // Función para redirigir al usuario a la página de su perfil
   const handleProfile = () => navigate('/dashboard/profile');
@@ -25,7 +27,7 @@ const AsideMenu = () => {
           <img className="aside__img" src={images.avatar} alt="user-avatar" />
         </div>
         <p className="aside__welcome">{t('welcome')}</p>
-        <p className="aside__username">{admin.username}</p>
+        <p className="aside__username">{username}</p>
         <p className="aside__admin">{t('role')}</p>
         <button onClick={handleProfile} className="aside__adminprofile">
           {t('profile')}
