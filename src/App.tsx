@@ -13,9 +13,9 @@ const App = () => {
     const postsData = await services.sampleData.getPosts();
     const usersData = await services.sampleData.getUsers();
     dispatch(loadingPosts());
-    dispatch(setPosts(postsData));
+    postsData && dispatch(setPosts(postsData));
     dispatch(loadingUsers());
-    dispatch(setUsers(usersData));
+    usersData && dispatch(setUsers(usersData));
   };
 
   // Traigo los usuarios y los posts cuando se renderiza el componente App
